@@ -16,7 +16,6 @@ The third argument is either a string or an integer.
 
 
 
-# print(result)
 def matrix(x: int, y: int, z: str or int):
     matrix = x * [y * [z]]
     return matrix
