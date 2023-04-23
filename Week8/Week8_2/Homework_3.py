@@ -12,12 +12,14 @@ def outer(func):
         count += 1
         print(f"Function has been called {count} times.")
         return func(*args)
+    
     return inner
 
 def my_func(*args):
     return args
 
 result = outer(my_func)
-print(result(1, 2, 3))
-print(result(1, 2))
-print(result(1))
+result(1, 2, 3)
+result(1, 2)
+result(1)
+result(0)
