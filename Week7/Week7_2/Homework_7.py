@@ -20,5 +20,5 @@ def matrix(x: int, y: int, z: str or int):
     matrix = x * [y * [z]]
     return matrix
 
-result = matrix(3, 2, 0)
+result = matrix(3, 2, 3)
 print(result)

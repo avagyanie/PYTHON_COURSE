@@ -22,7 +22,7 @@ def multiplyNums(str_num: str):
 
 result = multiplyNums("10, -2")
 print(result)
-
+    
 
 
 # version_2
