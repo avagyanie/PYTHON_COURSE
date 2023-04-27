@@ -47,7 +47,7 @@ print(pet(my_dict))
 # version_2
 def pet(input_dict: dict, pet_name: str) -> str:
     if pet_name.lower() in input_dict:
-        return f"{pet_name.capitalize()} in gone..."
+        return f"{pet_name.capitalize()} is gone..."
     return f"{pet_name.capitalize()} is here!"
 
 print(pet({

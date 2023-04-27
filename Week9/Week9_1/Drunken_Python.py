@@ -20,12 +20,26 @@ Notes
 def int_to_str(num):
     return str(num)
 
-def str_to_int(txt):
-    return int(txt)
+def str_to_int(string):
+    return int(string)
 
-print(int_to_str(4))
-print(str_to_int("4"))
+import builtins
 
-# del str
-# del int
-# de-drunk Python
+def str(obj):
+    if type(obj) == int:
+        return int_to_str(obj)
+    else:
+        return obj
+
+def int(obj):
+    if type(obj) == str:
+        return str_to_int(obj)
+    else:
+        return obj
+
+# reload the builtins module to replace the original str and int functions
+builtins.str = str
+builtins.int = int
+
+
+print(func(4))
