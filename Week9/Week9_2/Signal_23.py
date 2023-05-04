@@ -42,28 +42,47 @@ Input/Output
 
 
 # version_1
-def solution(image):
-    height = len(image)
-    width = len(image[0])
-    blurred = [[0] * (width - 2) for _ in range(height - 2)]
-    for y in range(1, height - 1):
-        for x in range(1, width - 1):
-            pixel_sum = 0
-            for j in range(y - 1, y + 2):
-                for i in range(x - 1, x + 2):
-                    pixel_sum += image[j][i]
-            blurred_value = pixel_sum // 9
-            blurred[y-1][x-1] = blurred_value
-    return blurred
+# def solution(image):
+#     height = len(image)
+#     width = len(image[0])
+#     blurred = [[0] * (width - 2) for _ in range(height - 2)]
+#     for y in range(1, height - 1):
+#         for x in range(1, width - 1):
+#             pixel_sum = 0
+#             for j in range(y - 1, y + 2):
+#                 for i in range(x - 1, x + 2):
+#                     pixel_sum += image[j][i]
+#             blurred_value = pixel_sum // 9
+#             blurred[y-1][x-1] = blurred_value
+#     return blurred
         
-print(solution([[36,0,18,9], 
- [27,54,9,0], 
- [81,63,72,45]]))
+# print(solution([[36,0,18,9], 
+#  [27,54,9,0], 
+#  [81,63,72,45]]))
 
 
 # version_2
+# def solution(image):
+#     return [[int(sum(sum(x[i:i+3]) for x in image[j:j+3])/9) for i in range(len(image[j])-2)] for j in range(len(image)-2)]
+
+# print(solution([[36,0,18,9], 
+#  [27,54,9,0], 
+#  [81,63,72,45]]))
+
+
+
+# version_3
 def solution(image):
-    return [[int(sum(sum(x[i:i+3]) for x in image[j:j+3])/9) for i in range(len(image[j])-2)] for j in range(len(image)-2)]
+    lst = []
+    for i in range(len(image) - 2):
+        lst_2 = []
+        for j in range(len(image[0]) - 2):
+            lst_3 = image[i][j:j + 3] + image[i + 1][j:j + 3] + image[i + 2][j: + 3]
+            s = sum(lst_3)
+            lst_2.append(s // 9)
+        lst.append(lst_2)
+    return lst
+
 
 print(solution([[36,0,18,9], 
  [27,54,9,0], 
