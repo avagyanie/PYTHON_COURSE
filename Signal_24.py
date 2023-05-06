@@ -28,17 +28,15 @@ solution(matrix) = [[1, 2, 1],
 
 
 def solution(matrix):
-    lst = [[0] * len(matrix[0])] * len(matrix)
+    rows = len(matrix)
+    cols = len(matrix[0])
+        
+    conv = lambda i , j : 1 if 0 <= i < rows and 0 <= j < cols and matrix[i][j] else 0
     
-    for i in range(len(matrix) - 1):
-        for j in range(1, len(matrix[0]) - 1):
-            if j:
-                lst[i][j + 1] += 1
-                lst[i + 1][j] += 1
-                
-
-    return lst
+    nbs = lambda i, j : sum(conv(ii, jj) for ii in range(i-1, i+2) for jj in range(j-1, j+2)) - conv(i, j)
+    
+    return [[nbs(i, j) for j in range(cols)]for i in range(rows)]
 
 print(solution([[True, False, False],
-          [False, True, False],
-          [False, False, False]]))
+                [False, True, False],
+                [False, False, False]]))
