@@ -33,13 +33,29 @@ class Book:
         print(f"Title: {self.title}")
     def get_author(self):
         print(f"Author: {self.author}")
-    def instantiate(self):
-        self.title = self.title.split()
-        return self.title[0][0] + self.title[1][0]
+    
 
-book = Book("Harry Potter", "J.K. Rowling")
-print(book.title)
-print(book.author)
-book.get_title()
-book.get_author()
-print(book.instantiate())
+HP = Book("Harry Potter", "J.K. Rowling")
+PP = Book("Pride and Prejudice", "Jane Austen")
+H = Book("Hamlet", "William Shakespeare")
+WP = Book("War and Peace", "Leo Tolstoy")
+
+print(HP.title)
+print(HP.author)
+HP.get_title()
+HP.get_author()
+
+print(PP.title)
+print(PP.author)
+PP.get_title()
+PP.get_author()
+
+print(H.title)
+print(H.author)
+H.get_title()
+H.get_author()
+
+print(WP.title)
+print(WP.author)
+WP.get_title()
+WP.get_author()
