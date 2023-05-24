@@ -31,7 +31,7 @@ class Person:
     def __init__(self, firstname, lastname, age):
         self.firstname = firstname
         self.lastname = lastname
-        self.age = age
+        self.age = age0
 
 p1 = Person("Michael", "Smith", 40)
 p2 = Person("Alice", "Waters", 21)
