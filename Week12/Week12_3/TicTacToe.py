@@ -45,9 +45,13 @@ class Board:
     def check_draw(self):
         return " " not in self.board
 
-class HumanPlayer:
-    def __init__(self, player_symbol):
+class Player:
+     def __init__(self, player_symbol):
         self.player_symbol = player_symbol
+
+class HumanPlayer(Player):
+    def __init__(self, player_symbol):
+        super().__init__(player_symbol)
 
     def get_move(self):
         while True:
@@ -60,9 +64,9 @@ class HumanPlayer:
             except ValueError:
                 print("Invalid symbol. Please, enter a number.")
 
-class ComputerPlayer:
+class ComputerPlayer(Player):
     def __init__(self, player_symbol):
-        self.player_symbol = player_symbol
+        super().__init__(player_symbol)
 
     def get_move(self, board):
         available_moves = [k for k in range(9) if board.is_valid_move(k)]
