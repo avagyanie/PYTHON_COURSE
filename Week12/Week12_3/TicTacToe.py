@@ -46,7 +46,7 @@ class Board:
         return " " not in self.board
 
 class Player:
-     def __init__(self, player_symbol):
+    def __init__(self, player_symbol):
         self.player_symbol = player_symbol
 
 class HumanPlayer(Player):
