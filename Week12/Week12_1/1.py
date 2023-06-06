@@ -5,19 +5,20 @@
 import time
 
 def outer(func):
-    def inner(sec):
+    def inner(*args, **kwargs):
         start = time.time()
-        func(sec)
+        result = func(*args, **kwargs)
         end = time.time()
         result = end - start
-        return f"Function new_func() works {result} soconds"
+        print(f"Function new_func() works {result} soconds")
+        return result
     return inner
 
 @outer
-def new_func(sec):
-    time.sleep(sec)
-    return 'Go to sleep'
+def new_func(*args, **kwargs):
+    time.sleep(1)
+    print("Go to sleep")
 
-x = new_func(5)
+x = new_func()
 
 print(x)
