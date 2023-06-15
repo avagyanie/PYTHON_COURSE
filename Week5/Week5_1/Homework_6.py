@@ -10,6 +10,6 @@ Examples
 
 
 
-students = {"Sutend 1": "Steve", "Sutend 2": "Becky", "Sutend 3": "John"}
+students = {"Student 1": "Steve", "Student 2": "Becky", "Student 3": "John"}
 
 print(sorted(students.values()))

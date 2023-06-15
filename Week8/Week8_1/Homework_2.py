@@ -34,6 +34,3 @@ def solution(param1, param2):
 
 print("solution(param1, param2) =", end = " ")
 print(solution(3, 5))
-
-
-# solution = (+)

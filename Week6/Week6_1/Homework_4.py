@@ -11,10 +11,9 @@ is_symmetrical(1112111) ➞ True
 
 
 
-num = int(input("Enter a number -> "))
-lst = [i for i in str(num)]
+num = input("Enter a number -> ")
 
-if lst == lst[::-1]:
+if num == num[::-1]:
     print(True)
 else:
     print(False)
