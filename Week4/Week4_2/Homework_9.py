@@ -8,33 +8,11 @@ Examples
 
 
 
-# version_1
+first_number = 7
+length = 5
+lst = [first_number]
 
-# first_number = int(input("Enter first number"))
-# length = int(input("Enter length"))
-# last_number = first_number * length
-# result = list(range(first_number, last_number + 1, first_number))
-
-# print(result)
-
-
-# version_2
-
-# multiples = lambda num, length, i=1, lst=[]: (lst if len(lst) == length else multiples(num, length, i+1, lst + [num*i]))
-# print(multiples(7, 5))
-
-# version_3
-
-# def list_of_multiples(num, length):
-#     lst = [num] * length
-#     lst[0:] = [num * (i+1) for i in range(length)]
-#     return lst
-
-# print(list_of_multiples(17, 6))
-
-# version_4
-
-lst = [7]
-lst.extend([lst[0]*2])
+for i in range(length - 1):
+    lst.extend([lst[i] + lst[0]])
 
 print(lst)
