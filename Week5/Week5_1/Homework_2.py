@@ -15,4 +15,4 @@ colors = (165, 170, 221)
 
 color_invert = (255 - colors[0], 255 - colors[1], 255 - colors[2])
 
-print(tuple(color_invert))
+print(color_invert)
