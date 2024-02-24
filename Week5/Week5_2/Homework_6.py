@@ -38,3 +38,11 @@ lst = [int(char) for char in str]
 summary = sum(lst)
 
 print(x % summary == 0)
+
+
+# version_3
+num = int(input("Insert a number "))
+div = num // 10 + num % 10
+   
+print(not num % div)
+
