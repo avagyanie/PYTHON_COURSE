@@ -36,3 +36,14 @@ for i in lst1:
         result += i
 
 print(result)
+
+
+# version_3
+lst1 = [1,2,3]
+lst2 = [5,3,2]
+lst3 = [7,3,2]
+s1 = set(lst1)
+s2 = set(lst2)
+s3 = set(lst3)
+comm = s1 & s2 & s3
+print(sum(comm))
