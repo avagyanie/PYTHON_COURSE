@@ -49,3 +49,15 @@ result.append(even)
 result.append(odd)
 
 print(result)
+
+
+# version_3
+l = [1, 2, 3, 4, 5, 6]
+t = tuple(l)
+res = [0, 0]
+for item in t:
+    if item % 2:
+        res[1] += item
+    else:
+        res[0] += item
+print(res)
