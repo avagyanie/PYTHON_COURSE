@@ -19,3 +19,10 @@ def add_in_front(txt):
 lst = ["Ani", "Suren", "Narine", "Naira", "Varsenik"]
 result = list(map(add_in_front, lst))
 print(result)
+
+
+
+# version_3
+lst = ["Ani", "Suren", "Narine", "Naira", "Varsenik"]
+result = list(map(lambda x: "Hello, " + x, lst))
+print(result)
