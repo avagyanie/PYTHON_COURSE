@@ -33,3 +33,11 @@ def consecutive_combo(lst1, lst2):
     return set(range(minimum, maximum+1)) == set(lst1 + lst2)
 
 print(consecutive_combo([1, 4, 5, 6], [2, 3, 7, 8, 10]))
+
+
+# version_3
+def consecutive_combo(lst1,lst2):
+    lst=sorted(lst1+lst2)
+    return lst[len(lst)-1]-lst[0]==len(lst)-1
+
+print(consecutive_combo([7, 4, 5, 1], [2, 3, 6]))
