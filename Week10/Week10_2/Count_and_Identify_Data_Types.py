@@ -41,8 +41,6 @@ print(count_datatypes("Hello", "Bye", True, True, False, {"1": "One", "2": "Two"
 # version_2
 def count_datatypes(*args):
     d = {int: 0, str: 0, bool: 0, list: 0, tuple: 0, dict: 0}
-    if args == ():
-        return [0, 0, 0, 0, 0, 0]
     for i in args:
         d[type(i)] += 1
         
