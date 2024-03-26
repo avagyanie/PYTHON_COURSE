@@ -1,20 +1,21 @@
 "Գրել դեկորատոր, որը ստուգում է, թե ինչ տիպի փոփոխական է վերադարձվում։"
 
 
-def outer(func):
-    def inner(*args):
-        res = func(*args)
-        x = set()    #Յուրաքանչյուր տիպը 1 անգամ տպելու համար, եթե պետք է ամեն անգամ տպել, կարելի է լիստ սահմանել
+def dec(func):
+    def wrapper(*args, **kwargs):
+        func(*args, **kwargs)
+        result = set()   #Յուրաքանչյուր տիպը 1 անգամ տպելու համար, եթե պետք է ամեն անգամ տպել, կարելի է լիստ սահմանել
         for i in args:
-            x.add(type(i))
-        return x
-    return inner
+            result.add(type(i))
+        for j in kwargs.values():
+            result.add(type(j))
 
-@outer
-def new_func(*args):
+        return result
+    return wrapper
+
+@dec
+def f(*args, **kwargs):
     
-    return "Hello"
+    print("There are all types of positional and keyword arguments!")
 
-a = new_func(2, "anun", 3.12, [1, 2, 3], (1, 1, 1), {4, 5, 6}, {"a": 1, "b": 2}, 120)
-
-print(a)
+print(f(1, 'Ani', [1, 2, 3], a = 12, b = {1: 'x', 2: 'y'}))
